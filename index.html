@@ -53,12 +53,12 @@
     <div class="contenedor">
 
         <div class="seccion">
-            <h3>📸 Fotirris</h3>
+            <h3>Fotirris</h3>
             <p>Aquí va la foto</p>
         </div>
 
         <div class="seccion">
-            <h3>📖 Biografía mia</h3>
+            <h3>Biografía mia</h3>
             <p>
                 Aquí va la biografía.  
                 Mi nombre es Moisés Eduardo Varela, soy Ingeniero Ambiental de la gloriosa Universidad Distrital. Actualmente
@@ -70,7 +70,7 @@
         </div>
 
         <div class="seccion">
-            <h3>🗺️ Mapirris (Geovisor)</h3>
+            <h3> Mapirris (Geovisor)</h3>
             <div id="map"></div>
         </div>
 
@@ -81,7 +81,7 @@
 
     <script>
         // Inicializar el mapa
-        const map = L.map('map').setView([13.6929, -89.2182], 7); // Centroamérica (ajústalo)
+        const map = L.map('map').setView([4.602611371418573, -74.11560661610417], 7); // Centroamérica (ajústalo)
 
         // Capa base
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -89,7 +89,7 @@
         }).addTo(map);
 
         // Marcador de ejemplo
-        L.marker([13.6929, -89.2182])
+        L.marker([4.602611371418573, -74.11560661610417])
             .addTo(map)
             .bindPopup('📍 Ubicación de ejemplo');
 
