@@ -11,66 +11,37 @@
         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     />
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-
-        h1 {
-            text-align: center;
-            background-color: #222;
-            color: white;
-            padding: 15px;
-            margin: 0;
-        }
-
-        .contenedor {
-            padding: 20px;
-        }
-
-        .seccion {
-            background-color: white;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
-
-        /* MAPA */
-        #map {
-            width: 100%;
-            height: 400px;
-            border-radius: 8px;
-        }
-    </style>
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
     <h1>Moisés Eduardo Varela</h1>
 
     <div class="contenedor">
 
-        <div class="seccion">
-            <h3>Fotirris</h3>
-            <p>Aquí va la foto</p>
+        <!-- FOTO Y BIOGRAFÍA -->
+        <div class="top-section">
+
+            <div class="foto">
+                <h3>📸 Foto</h3>
+                <img src="Imagen.jpg" alt="Foto de Moisés Eduardo Varela">
+            </div>
+
+            <div class="biografia">
+                <h3>📖 Biografía</h3>
+                <p>
+                    Hola, soy Moisés Eduardo Varela. Esta es mi biografía de ejemplo.
+                    Puedes agregar información sobre estudios, hobbies, intereses y todo
+                    lo que quieras mostrar en tu página personal.
+                </p>
+            </div>
+
         </div>
 
-        <div class="seccion">
-            <h3>Biografía mia</h3>
-            <p>
-                Aquí va la biografía.  
-                Mi nombre es Moisés Eduardo Varela, soy Ingeniero Ambiental de la gloriosa Universidad Distrital. Actualmente
-                me encuentro estudiando la especialización en Sistemas de Información Geográfica y estoy teniendo clases presenciales en 
-                la sede de Ingeniería. 
-
-                Me encuentro en la clase de Programación Orientada a Objetos, la cual me parece muy interesante y estoy aprendiendo mucho sobre cómo organizar el código de manera eficiente y reutilizable.
-            </p>
-        </div>
-
-        <div class="seccion">
-            <h3> Mapirris (Geovisor)</h3>
+        <!-- MAPA -->
+        <div class="seccion-mapa">
+            <h3>🗺️ Mapirris (Geovisor)</h3>
             <div id="map"></div>
         </div>
 
@@ -79,28 +50,8 @@
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-    <script>
-        // Inicializar el mapa
-        const map = L.map('map').setView([4.602611371418573, -74.11560661610417], 7); // Centroamérica (ajústalo)
-
-        // Capa base
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
-
-        // Marcador de ejemplo
-        L.marker([4.602611371418573, -74.11560661610417])
-            .addTo(map)
-            .bindPopup('📍 Ubicación de ejemplo');
-
-        // Interacción: clic en el mapa
-        map.on('click', function (e) {
-            L.marker(e.latlng)
-                .addTo(map)
-                .bindPopup(`Lat: ${e.latlng.lat.toFixed(4)}<br>Lng: ${e.latlng.lng.toFixed(4)}`)
-                .openPopup();
-        });
-    </script>
+    <!-- JS propio -->
+    <script src="map.js"></script>
 
 </body>
 </html>
